@@ -126,7 +126,6 @@ function renderForm(schemaType) {
 
     input.id = field.id;
     input.placeholder = field.tooltip;
-
     wrapper.appendChild(label);
     wrapper.appendChild(input);
     container.appendChild(wrapper);
@@ -201,6 +200,12 @@ function validateMarkup() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Detect if inside an iframe and hide the copy button
+  if (window.self !== window.top) {
+    const copyWrapper = document.getElementById('copyBtnWrapper');
+    if (copyWrapper) copyWrapper.style.display = 'none';
+  }
+
   const typeSelect = document.getElementById('schemaType');
   typeSelect.addEventListener('change', () => {
     renderForm(typeSelect.value);
