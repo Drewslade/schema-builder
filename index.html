@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Schema Markup Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Schema Markup Generator</h1>
+
+    <label for="schemaType">Choose schema type</label>
+    <select id="schemaType">
+      <option value="Article">Article</option>
+      <option value="Organization">Organization</option>
+      <option value="VideoObject">VideoObject</option>
+      <option value="Event">Event</option>
+      <option value="FAQPage">FAQPage</option>
+      <option value="HowTo">HowTo</option>
+      <option value="JobPosting">JobPosting</option>
+      <option value="Person">Person</option>
+      <option value="Product">Product</option>
+    </select>
+
+    <div class="layout">
+      <form id="schema-form">
+        <div id="formFields" class="form-grid"></div>
+      </form>
+
+      <div class="output">
+        <h2>Live Preview</h2>
+        <pre id="jsonOutput">{}</pre>
+        <div class="button-group">
+          <button id="copyBtn">Copy to Clipboard</button>
+          <button id="validateBtn">Validate in Google Rich Results Test</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
